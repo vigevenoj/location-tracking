@@ -1,0 +1,20 @@
+Sharkbaitextraordinaire location tracker v.0.0.1 2015-07-01
+
+Requires the Eclipse paho MQTT jar on the classpath.
+
+Connects to a specified MQTT broker and prints out messages received on the 
+specified topic. Configuration defaults to connecting to a broker listening 
+on ssl://localhost:8883, as a user named "user" without a password  and 
+watching the topic "owntracks" for messages. Default configuration options 
+can be overridden with the following properties:
+app.broker.url
+app.client.username
+app.client.password
+app.client.client_id
+app.broker.topic
+com.ibm.ssl.protocol
+com.ibm.ssl.trustStore
+com.ibm.ssl.trustStorePassword
+
+by specifying a properties file as the only argument to the class, ie,
+java -cp .:~/.m2/repository/org/eclipse/paho/org.eclipse.paho.client.mqttv3/1.0.2/org.eclipse.paho.client.mqttv3-1.0.2.jar:target/location-0.0.1-SNAPSHOT.jar com.sharkbaitextraordinaire.location.SimpleMqttClient ./app.properties
